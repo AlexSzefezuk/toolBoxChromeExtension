@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Senhas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tool Box</title>
     <style>
       * {
         margin: 0;
@@ -22,13 +27,21 @@
         height: auto;
         background-color: #f8f8f8;
       }
+
+      .card {
+        width: 300px;
+      }
     </style>
   </head>
   <body>
-    <div class="passgenerator">
+    <div class="passgenerator card m-2 bg-info p-2 text-center rounded">
+      <h3>Gerador de Senhas</h3>
       <form data-js="passGeneratorForm" action="submit">
-        <label for="charNumber">Número de caracteres: 80</label>
+        <label class="form-label" for="charNumber"
+          >Número de caracteres: 80</label
+        >
         <input
+          class="form-range m-1"
           name="charNumber"
           type="range"
           min="8"
@@ -38,17 +51,34 @@
           id="charNumber"
           style="margin-top: 5px"
         />
-        <input type="text" placeholder="Gerar senha" id="password" />
-        <button id="generatePassBtn">Gerar senha</button>
-        <button id="copyPassBtn">Copiar senha</button>
+        <input
+          type="text"
+          class="form-control m-1"
+          placeholder="Gerar senha"
+          id="password"
+        />
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary m-1" id="generatePassBtn">
+            Gerar senha
+          </button>
+          <button class="btn btn-primary m-1" id="copyPassBtn">
+            Copiar senha
+          </button>
+        </div>
       </form>
     </div>
 
-    <div class="personCodeValidator">
+    <div
+      class="personCodeValidator card m-2 bg-info p-2 text-center rounded"
+    >
+    <h3 class="card-title">Validador de CPF</h3>
+
       <form data-js="personCodeValidatorForm" action="submit">
-        <label name="personCodeLabel" for="personCode">CPF</label>
-        <input type="text" placeholder="CPF" name="personCode" />
-        <button id="validatePersonCodeBtn">Validar CPF</button>
+        <label name="personCodeLabel" class="form-label m-1" for="personCode">CPF</label>
+        <input type="text" class="form-control m-1" placeholder="CPF" name="personCode" />
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary m-1" id="validatePersonCodeBtn">Validar CPF</button>
+        </div>
       </form>
     </div>
 
