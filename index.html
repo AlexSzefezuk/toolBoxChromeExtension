@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+
+      body {
+        margin: 1.8rem;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: #f8f8f8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="passgenerator">
+      <form data-js="passGeneratorForm" action="submit">
+        <label for="charNumber">Número de caracteres: 80</label>
+        <input
+          name="charNumber"
+          type="range"
+          min="8"
+          max="150"
+          step="1"
+          placeholder="Número de caracteres"
+          id="charNumber"
+          style="margin-top: 5px"
+        />
+        <input type="text" placeholder="Gerar senha" id="password" />
+        <button id="generatePassBtn">Gerar senha</button>
+        <button id="copyPassBtn">Copiar senha</button>
+      </form>
+    </div>
+
+    <div class="personCodeValidator">
+      <form data-js="personCodeValidatorForm" action="submit">
+        <label name="personCodeLabel" for="personCode">CPF</label>
+        <input type="text" placeholder="CPF" name="personCode" />
+        <button id="validatePersonCodeBtn">Validar CPF</button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
