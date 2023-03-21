@@ -1,9 +1,9 @@
 {
-  "name":"Gerador de senhas",
-  "version":"1.0",
-  "description":"Gerador de senhas fortes e aleatórias",
-  "browser_action": {
-      "default_popup":"index.html"
+  "name": "Gerador de senhas",
+  "version": "1.0",
+  "description": "Gerador de senhas fortes e aleatórias",
+  "action": {
+    "default_popup": "index.html"
   },
-  "manifest_version":2
+  "manifest_version": 3
 }
