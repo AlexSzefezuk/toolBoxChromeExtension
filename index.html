@@ -5,35 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">    
     <title>Tool Box</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        user-select: none;
-      }
-
-      body {
-        margin: 1.8rem;
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        background-color: #f8f8f8;
-      }
-
-      .card {
-        width: 300px;
-      }
-    </style>
   </head>
   <body>
     <div class="passgenerator card m-2 bg-info p-2 text-center rounded">
       <h3>Gerador de Senhas</h3>
       <form data-js="passGeneratorForm" action="submit">
-        <label class="form-label" for="charNumber"
+        <label data-js="charNumberLabel" class="form-label" for="charNumber"
           >Número de caracteres: 80</label
         >
         <input
@@ -44,20 +23,19 @@
           max="150"
           step="1"
           placeholder="Número de caracteres"
-          id="charNumber"
           style="margin-top: 5px"
         />
         <input
           type="text"
           class="form-control m-1"
           placeholder="Gerar senha"
-          id="password"
+          name="password"
         />
         <div class="d-flex justify-content-center">
-          <button class="btn btn-primary m-1" id="generatePassBtn">
+          <button class="btn btn-primary m-1" data-js="generatePassBtn">
             Gerar senha
           </button>
-          <button class="btn btn-primary m-1" id="copyPassBtn">
+          <button class="btn btn-primary m-1" data-js="copyPassBtn">
             Copiar senha
           </button>
         </div>
@@ -77,6 +55,11 @@
         </div>
       </form>
     </div>
+
+    <div contenteditable="true" class="card" data-js="imgInput" id="pasteArea">|</div>
+    <p data-js="canvas"></p>
+
+    <script src='https://unpkg.com/tesseract.js@v2.0.2/dist/tesseract.min.js'></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
   </body>
