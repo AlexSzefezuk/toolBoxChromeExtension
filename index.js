@@ -104,11 +104,12 @@ imgInput.addEventListener('input', event => {
   const imgSrc = inputDiv.childNodes[0].src
 
   if (imgSrc) {
-    Tesseract.recognize(imgSrc, 'por', {}).then(({ data: { text } }) => {
+    Tesseract.recognize(imgSrc, 'por', { logger: m => console.log(m) }).then(({ data: { text } }) => {
       console.log('rodou')
       const canvas = document.querySelector('[data-js="canvas"]')
-      canvas.textContent = text
-      navigator.clipboard.writeText(text)
+      canvas.value = text
+      canvas.select()
+      navigator.clipboard.writeText(canvas.value)
     })
   }
 })
