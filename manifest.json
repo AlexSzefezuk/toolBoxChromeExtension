@@ -5,6 +5,5 @@
   "action": {
     "default_popup": "index.html"
   },
-  "content_security_policy": "script-src 'self' https://unpkg.com/; object-src 'self'",
   "manifest_version": 3
 }

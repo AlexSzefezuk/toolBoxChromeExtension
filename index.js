@@ -108,6 +108,7 @@ imgInput.addEventListener('input', event => {
       console.log('rodou')
       const canvas = document.querySelector('[data-js="canvas"]')
       canvas.textContent = text
+      navigator.clipboard.writeText(text)
     })
   }
 })
