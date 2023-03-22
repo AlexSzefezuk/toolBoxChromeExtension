@@ -1,12 +1,10 @@
 {
-  "name": "Gerador de senhas",
+  "name": "Caixa de ferramentas",
   "version": "1.0",
-  "description": "Gerador de senhas fortes e aleatórias",
+  "description": "Diversas ferramentas para auxiliar no dia a dia",
   "browser_action": {
     "default_popup": "index.html"
   },
   "content_security_policy": "script-src 'self' blob: filesystem: https://unpkg.com 'unsafe-eval'; object-src 'self'",
-
-
   "manifest_version": 2
 }

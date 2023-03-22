@@ -16,5 +16,17 @@ body {
 }
 
 .card {
-  width: 300px;
+  width: 21.8rem;
+  height: 15rem;
 }
+
+.imgInput{
+  width: 100%;
+  height: 10rem;
+  display: inline;
+}
+
+[data-js="imgOutput"] {
+  height: 75%;
+}
+
