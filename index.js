@@ -99,7 +99,7 @@ codeValidatorForm.addEventListener('submit', event => {
     return true
   }
 
-  const bussinessCodeValidator = code => {
+  const bussinesCodeValidator = code => {
     const numbers = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
     code = code.replace(/[^\d]/g, '')
     while (code.length < 14) code = `0${code}`
@@ -120,12 +120,12 @@ codeValidatorForm.addEventListener('submit', event => {
 
   let codeIsValid = null
 
-  if (code.length === 11) {
+  if (code.length <= 11) {
     codeIsValid = personCodeValidator(code)
   }
 
-  if (code.length === 14) {
-    codeIsValid = bussinessCodeValidator(code)
+  if (code.length > 11) {
+    codeIsValid = bussinesCodeValidator(code)
   }
 
   if (codeIsValid) {
@@ -152,7 +152,7 @@ imgInput.addEventListener('input', async event => {
     const {
       data: { text }
     } = await Tesseract.recognize(imgSrc, 'por')
-    
+
     imgOutput.value = text
     imgOutput.select()
     navigator.clipboard.writeText(imgOutput.value)
