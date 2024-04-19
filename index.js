@@ -117,13 +117,13 @@ codeValidatorForm.addEventListener('submit', event => {
     return true
   }
 
-  const code = event.target.code.value
+  const code = event.target.code.value.replace(/[^0-9]/g, '')
 
   let codeIsValid = null
 
   if (code.length <= 11) {
     codeIsValid = personCodeValidator(code)
-    event.target.code.value = event.target.code.value.replace(
+    event.target.code.value = code.replace(
       /(\d{3})(\d{3})(\d{3})(\d{2})/g,
       '$1.$2.$3-$4'
     )
@@ -131,7 +131,7 @@ codeValidatorForm.addEventListener('submit', event => {
 
   if (code.length > 11) {
     codeIsValid = bussinesCodeValidator(code)
-    event.target.code.value = event.target.code.value.replace(
+    event.target.code.value = code.replace(
       /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,
       '$1.$2.$3/$4-$5'
     )
