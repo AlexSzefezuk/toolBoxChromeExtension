@@ -70,6 +70,7 @@ codeValidatorForm.addEventListener('input', () => {
 
 codeValidatorForm.addEventListener('submit', event => {
   event.preventDefault()
+
   const personCodeValidator = code => {
     code = code.replace(/[^\d]/g, '')
 
@@ -122,10 +123,18 @@ codeValidatorForm.addEventListener('submit', event => {
 
   if (code.length <= 11) {
     codeIsValid = personCodeValidator(code)
+    event.target.code.value = event.target.code.value.replace(
+      /(\d{3})(\d{3})(\d{3})(\d{2})/g,
+      '$1.$2.$3-$4'
+    )
   }
 
   if (code.length > 11) {
     codeIsValid = bussinesCodeValidator(code)
+    event.target.code.value = event.target.code.value.replace(
+      /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,
+      '$1.$2.$3/$4-$5'
+    )
   }
 
   if (codeIsValid) {
